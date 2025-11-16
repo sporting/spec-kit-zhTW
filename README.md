@@ -4,7 +4,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-spec--kit-blue)](https://github.com/github/spec-kit)
 [![語言](https://img.shields.io/badge/語言-繁體中文-red)](README.md)
-[![狀態](httpss://img.shields.io/badge/狀態-穩定-green)](README.md)
+[![狀態](https://img.shields.io/badge/狀態-穩定-green)](README.md)
 
 ---
 
