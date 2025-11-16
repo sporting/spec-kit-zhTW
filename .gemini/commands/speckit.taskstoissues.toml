@@ -1,0 +1,32 @@
+description = "根據可用的設計產物，將現有任務轉換為可執行、依賴排序的 GitHub issue。"
+
+prompt = """
+---
+description: 根據可用的設計產物，將現有任務轉換為可執行、依賴排序的 GitHub issue。
+tools: ['github/github-mcp-server/issue_write']
+---
+
+## 使用者輸入
+
+```text
+$ARGUMENTS
+```
+
+您**必須**在繼續之前考慮使用者輸入（如果非空）。
+
+## 概述
+
+1.  從儲存庫根目錄執行 `.specify/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks`，並解析 FEATURE_DIR 和 AVAILABLE_DOCS 列表。所有路徑都必須是絕對路徑。對於像 "I'm Groot" 這樣的參數中的單引號，請使用跳脫語法：例如 'I'\''m Groot'（如果可能，也可以使用雙引號:"I'm Groot"）。
+2.  從執行腳本中，提取**任務**的路徑。
+3.  透過執行以下命令獲取 Git 遠端：
+
+```bash
+git config --get remote.origin.url
+```
+
+**僅當遠端是 GITHUB URL 時才繼續執行後續步驟**
+
+4.  對於列表中的每個任務，使用 GitHub MCP 伺服器在代表 Git 遠端的儲存庫中建立一個新的 issue。
+
+**在任何情況下都絕不允許在與遠端 URL 不匹配的儲存庫中建立 ISSUE**
+"""
