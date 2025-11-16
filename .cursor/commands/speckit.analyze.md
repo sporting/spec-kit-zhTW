@@ -8,7 +8,7 @@ description: 在任務生成後對 spec.md、plan.md 和 tasks.md 進行非破�
 
 ---
 
-## 用户输入
+## 使用者輸入
 
 ```text
 $ARGUMENTS
